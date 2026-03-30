@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>「本命」と「遊び相手」を分ける男のリアルな基準10個</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      background: #0f0f0f;
+      min-height: 100vh;
+      color: #333;
+    }
+
+    /* ヒーローセクション */
+    .hero {
+      background: linear-gradient(160deg, #1a0a0f 0%, #2d0f1e 50%, #1a0a0f 100%);
+      padding: 52px 24px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: 50%;
+      transform: translateX(-50%);
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(233,30,140,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid rgba(233,30,140,0.5);
+      color: #f48fb1;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      padding: 5px 18px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #f48fb1;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .hero h2 {
+      font-size: 28px;
+      font-weight: 900;
+      color: white;
+      line-height: 1.45;
+      margin-bottom: 20px;
+    }
+
+    .hero h2 em {
+      color: #e91e8c;
+      font-style: normal;
+    }
+
+    .hero-desc {
+      font-size: 13px;
+      color: #888;
+      line-height: 1.9;
+    }
+
+    /* コンテナ */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 16px 60px;
+      background: #f7f0f3;
+      min-height: 100vh;
+    }
+
+    /* イントロ */
+    .intro-section {
+      background: #1e1e1e;
+      padding: 28px 24px;
+    }
+
+    .intro-section p {
+      font-size: 13px;
+      color: #aaa;
+      line-height: 2;
+    }
+
+    .intro-section .hl { color: #f48fb1; font-weight: 700; }
+    .intro-section .wh { color: white; font-weight: 700; }
+
+    /* カード全体 */
+    .cards-wrap {
+      padding: 20px 16px;
+      background: #f7f0f3;
+    }
+
+    .criterion-card {
+      background: white;
+      border-radius: 20px;
+      margin-bottom: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      cursor: pointer;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .criterion-card:hover {
+      box-shadow: 0 8px 32px rgba(233,30,140,0.15);
+      transform: translateY(-2px);
+    }
+
+    /* カードヘッダー */
+    .card-top {
+      padding: 22px 22px 18px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .card-num-wrap {
+      flex-shrink: 0;
+      text-align: center;
+    }
+
+    .card-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #f48fb1, #e91e8c);
+      color: white;
+      font-size: 18px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-main {
+      flex: 1;
+    }
+
+    .card-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: #e91e8c;
+      letter-spacing: 1.5px;
+      margin-bottom: 6px;
+    }
+
+    .card-title {
+      font-size: 17px;
+      font-weight: 900;
+      color: #1a1a1a;
+      line-height: 1.5;
+    }
+
+    .card-toggle {
+      font-size: 20px;
+      color: #f48fb1;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+      margin-top: 12px;
+    }
+
+    .criterion-card.open .card-toggle {
+      transform: rotate(180deg);
+    }
+
+    /* カード本文 */
+    .card-body {
+      display: none;
+      padding: 0 22px 24px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .criterion-card.open .card-body {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #f8bbd0, transparent);
+      margin-bottom: 20px;
+    }
+
+    /* 男のリアル本音 */
+    .real-voice {
+      background: #1a0a0f;
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .real-voice::before {
+      content: '💭 男のリアルな本音';
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      color: #f48fb1;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+    }
+
+    .real-voice p {
+      font-size: 13px;
+      color: #ddd;
+      line-height: 1.9;
+      font-style: italic;
+    }
+
+    /* 比較テーブル */
+    .compare-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .compare-box {
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .compare-box.honmei {
+      background: linear-gradient(135deg, #fce4ec, #fff0f5);
+      border: 1px solid #f48fb1;
+    }
+
+    .compare-box.asobi {
+      background: #f5f5f5;
+      border: 1px solid #e0e0e0;
+    }
+
+    .compare-tag {
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      padding: 3px 10px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .compare-box.honmei .compare-tag {
+      background: #e91e8c;
+      color: white;
+    }
+
+    .compare-box.asobi .compare-tag {
+      background: #bbb;
+      color: white;
+    }
+
+    .compare-text {
+      font-size: 12px;
+      color: #444;
+      line-height: 1.8;
+      font-weight: 600;
+    }
+
+    .compare-box.asobi .compare-text {
+      color: #888;
+    }
+
+    /* あなたへのアドバイス */
+    .advice-box {
+      background: linear-gradient(135deg, #fff8e1, #fffde7);
+      border-left: 4px solid #ffc107;
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .advice-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: #f57f17;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+
+    .advice-text {
+      font-size: 13px;
+      color: #444;
+      line-height: 1.8;
+      font-weight: 600;
+    }
+
+    /* フッターセクション */
+    .footer-section {
+      background: #1a0a0f;
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .footer-section h3 {
+      color: white;
+      font-size: 16px;
+      font-weight: 900;
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    .footer-section p {
+      font-size: 12px;
+      color: #888;
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+
+    .footer-section .hl { color: #f48fb1; }
+
+    .footer-copy {
+      font-size: 11px;
+      color: #444;
+      margin-top: 20px;
+    }
+
+    /* 展開ボタン */
+    .expand-all-btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: white;
+      border: 2px solid #f48fb1;
+      color: #e91e8c;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: all 0.2s;
+    }
+
+    .expand-all-btn:hover {
+      background: #fff5f8;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ヒーロー -->
+<div class="hero">
+  <div class="hero-badge">✦ 無料プレゼント ✦</div>
+  <h1>男性目線で完全解説</h1>
+  <h2>「<em>本命</em>」と「遊び相手」を<br>分ける男のリアルな基準<em>10</em>個</h2>
+  <p class="hero-desc">「なんで私は本命になれないんだろう…」<br>その答えが、ここにあります。</p>
+</div>
+
+<!-- イントロ -->
+<div class="intro-section">
+  <p>
+    「好きなのに、なぜか本命になれない」<br>
+    「体の関係はあるのに、付き合えない」<br>
+    「いつも友達止まりで終わってしまう」<br><br>
+    その理由、<span class="wh">男性側の「判断基準」</span>を知っていれば、見えてくるかもしれません。<br><br>
+    男が女性を「本命にしたい子」と「そうでない子」に<span class="hl">無意識で分類している10の基準</span>を、包み隠さずお伝えします。
+  </p>
+</div>
+
+<!-- カード -->
+<div class="container">
+  <div class="cards-wrap" id="cards-wrap">
+
+    <button class="expand-all-btn" onclick="toggleAll()">📖 全件まとめて開く</button>
+
+    <!-- JS で挿入 -->
+
+  </div>
+
+  <!-- フッター -->
+  <div class="footer-section">
+    <h3>「本命」になるために、<br>まず知ることから始めよう。</h3>
+    <p>
+      これらの基準は「男性が意識的に判断している」わけではありません。<br>
+      <span class="hl">感覚・直感・無意識</span>で行われています。<br>
+      だからこそ、知っているかどうかで大きく変わってきます。
+    </p>
+    <p class="footer-copy">© みい モテ育成 ｜ 無断転載禁止</p>
+  </div>
+</div>
+
+<script>
+const criteria = [
+  {
+    label: "基準 01",
+    title: "「この子の前では格好つけたい」と思うかどうか",
+    voice: "正直、どうでもいい子の前では頑張らなくていいって思ってる。でも、本当に好きな子の前では「ちゃんとした自分を見せたい」って自然に思う。その気持ちが出てくるかどうかで、全然違うんだよね。",
+    honmei: "会う前に身だしなみを気にする。いいところを見せようと努力する。「格好悪いところを見せたくない」と感じる。",
+    asobi: "ラフな状態で会う。良く見せようという緊張感がない。ありのままで十分だと思っている。",
+    advice: "「この子には格好つけたい」と思わせる女性になることがカギ。「自分の意見を持つ」「媚びない」「追いかけすぎない」ことが、男性の背筋を伸ばさせます。"
+  },
+  {
+    label: "基準 02",
+    title: "「この子と一緒にいると、自分がよく見える気がする」かどうか",
+    voice: "なんか一緒にいるだけで自分のテンション上がる子って、いるんだよ。一方で、一緒にいると疲れる子もいる。疲れる子と本気で付き合おうとは思えないよ。",
+    honmei: "一緒にいると楽しい・元気が出る。自己肯定感が上がる。「この子と一緒にいたい」と自然に思う。",
+    asobi: "一緒にいると楽だが、特に何かが高まるわけではない。時間つぶしとしてちょうどいい。",
+    advice: "「一緒にいて楽しい」だけでなく「一緒にいると自分まで輝く気がする」と思わせることが大事。自分が充実している人のそばにいたいと、男性は本能的に感じます。"
+  },
+  {
+    label: "基準 03",
+    title: "「他の男に取られたくない」という焦りが生まれるかどうか",
+    voice: "「あの子、他の男にも人気あるんだろうな」って思うと、急に焦るんだよね。正直、余裕で手に入りそうな子より、「取られるかも」って感じる子のほうが気になって仕方ない。",
+    honmei: "「他の男に取られたくない」と焦る。早めに関係を確定させたくなる。LINE返信が遅いと不安になる。",
+    asobi: "他の男がいても特に焦りを感じない。いなくなったらいなくなったで仕方ないと思っている。",
+    advice: "「いつでも捕まえられる」と思われた瞬間に追いたい気持ちは消えます。自分の生活・友達・趣味を充実させて、「この子は自分だけのものじゃない」と感じさせることが重要。"
+  },
+  {
+    label: "基準 04",
+    title: "「自分の時間を使いたい」と思えるかどうか",
+    voice: "誰かに会うって、エネルギーが要ることだから。正直、遊び相手には「まあ暇なら」って感じ。でも本命の子には「忙しくても会いたい」って気持ちが自然に出てくる。",
+    honmei: "忙しくても会う時間を作ろうとする。デートのために予定を動かす。会うことを楽しみにしている。",
+    asobi: "暇なときに連絡する。都合が良いときだけ会う。予定を犠牲にしてまで会いたいとは思わない。",
+    advice: "「暇だったら会おう」「どっちでもいいよ」という男性に合わせすぎると、自動的に「暇つぶし枠」になります。あなたにも都合があることを自然に示すことが大切。"
+  },
+  {
+    label: "基準 05",
+    title: "「この子は簡単には手に入らない」と感じるかどうか",
+    voice: "すぐ手に入った子と、ちょっと追いかけた子、どっちが気になるかって言ったら…追いかけた子だよ。人間って手に入りやすいものほど価値を感じにくいんだよね、正直。",
+    honmei: "少し距離感があり、追いかける余地がある。「もっと知りたい」という好奇心が続く。",
+    asobi: "最初から全部見えている。謎がない。求めれば簡単に応じてくれる感じがする。",
+    advice: "好意を全部見せてしまうのではなく、「7割見せて、3割は見せない」くらいのバランスが最も追われます。自分の感情を少し遅れて見せる練習をしてみて。"
+  },
+  {
+    label: "基準 06",
+    title: "「この子の前では本音が言える」かどうか",
+    voice: "本命の子には、恥ずかしいことも弱いところも話せるんだよね。逆に言えば、話せない子とはそれ以上深くなれない。壁を感じる子と本気で付き合おうとは思わない。",
+    honmei: "弱さや悩みを話せる。沈黙でも苦にならない。本音を言っても受け入れてもらえる安心感がある。",
+    asobi: "表面的な話しかしない。本音を話す気になれない。「キャラ」で接している感じがある。",
+    advice: "まず「あなた自身が本音を少し見せること」が有効。弱さや素の部分を見せた女性に、男性は本音で接したくなります。完璧を演じると、彼も本音を隠します。"
+  },
+  {
+    label: "基準 07",
+    title: "「この子、自分のことを好きすぎない」と感じるかどうか",
+    voice: "好意が全部見えてる子って、正直安心しすぎてしまって…燃えないんだよね。「俺のこと好きかな？どうかな？」くらいの子のほうが、なんか気になって仕方なくなる。",
+    honmei: "「好かれているとは思うけど、確信が持てない」くらいの距離感。追いかけたくなる余白がある。",
+    asobi: "好意が全部見えていて、失う不安がない。いつでも戻ってくると思っている。",
+    advice: "好意を全開にしているほど、彼の「追いたい」気持ちは消えていきます。「好き」という気持ちは行動よりも少し少なめに表現するくらいがちょうどいい。"
+  },
+  {
+    label: "基準 08",
+    title: "「連絡しないと忘れられそう」と感じるかどうか",
+    voice: "自分から連絡しなくても待ってくれてる子は、正直後回しにしてしまうんだよな。でも「この子、他が充実してそうだから連絡しないとな」ってなる子には、自然に連絡したくなる。",
+    honmei: "放っておくと「他に楽しいことしてそうだな」と感じる。連絡しないと関係が薄れそうと感じる。",
+    asobi: "連絡しなくてもどうせ待ってくれると思っている。放置しても問題ないと安心している。",
+    advice: "「待っています」という態度を見せるほど、彼は後回しにします。自分の生活を充実させて、「この子の時間をもらうには自分から動かなきゃ」という状況を自然に作り出すことが大事。"
+  },
+  {
+    label: "基準 09",
+    title: "「会うたびに新しい発見がある」かどうか",
+    voice: "全部わかった気がした瞬間、熱が冷める感覚ってあるんだよね。本命にしたい子って、会うたびに「この子こんな一面もあるんだ」ってなれる子。謎が続く子には飽きない。",
+    honmei: "会うたびに新しい表情・話題・一面がある。「もっと知りたい」という気持ちが続く。",
+    asobi: "もう大体わかった気がする。会話のパターンが読めてしまっている。",
+    advice: "「全部見せない」ことが最強の武器です。趣味・仕事・友達・内面、すべてを一気に話さず、少しずつ開示するように意識してみて。「この子まだ知らないことがある」と思わせ続けることが鍵。"
+  },
+  {
+    label: "基準 10",
+    title: "「この子といると、自分もちゃんとしなきゃと思う」かどうか",
+    voice: "なんか、一緒にいると自分も頑張りたくなる子っているんだよ。そういう子と付き合いたいって思う。逆に、いても何も変わらない子と本命になりたいとは…なかなか思えない。",
+    honmei: "一緒にいると自分も成長したくなる。「この子の彼氏として恥ずかしくない自分でいたい」と思う。",
+    asobi: "一緒にいても何も刺激がない。現状維持でいい相手として認識している。",
+    advice: "「自分自身が充実していること」「自分の夢や目標を持っていること」「仕事・趣味・友達関係が豊かであること」が、男性に「この子のそばにいたい」と思わせる最大の引力になります。"
+  }
+];
+
+function renderCards() {
+  const wrap = document.getElementById('cards-wrap');
+  const btn = wrap.querySelector('.expand-all-btn');
+
+  criteria.forEach((c, i) => {
+    const card = document.createElement('div');
+    card.className = 'criterion-card';
+    card.id = `card-${i}`;
+
+    card.innerHTML = `
+      <div class="card-top" onclick="toggleCard(${i})">
+        <div class="card-num-wrap">
+          <div class="card-num">${String(i + 1).padStart(2, '0')}</div>
+        </div>
+        <div class="card-main">
+          <div class="card-label">${c.label}</div>
+          <div class="card-title">${c.title}</div>
+        </div>
+        <div class="card-toggle">▼</div>
+      </div>
+      <div class="card-body">
+        <div class="divider"></div>
+        <div class="real-voice"><p>「${c.voice}」</p></div>
+        <div class="compare-wrap">
+          <div class="compare-box honmei">
+            <span class="compare-tag">💖 本命の場合</span>
+            <div class="compare-text">${c.honmei}</div>
+          </div>
+          <div class="compare-box asobi">
+            <span class="compare-tag">😶 遊び相手の場合</span>
+            <div class="compare-text">${c.asobi}</div>
+          </div>
+        </div>
+        <div class="advice-box">
+          <div class="advice-label">✏️ あなたへのアドバイス</div>
+          <div class="advice-text">${c.advice}</div>
+        </div>
+      </div>
+    `;
+
+    wrap.insertBefore(card, null);
+  });
+}
+
+function toggleCard(i) {
+  document.getElementById(`card-${i}`).classList.toggle('open');
+}
+
+function toggleAll() {
+  const cards = document.querySelectorAll('.criterion-card');
+  const allOpen = [...cards].every(c => c.classList.contains('open'));
+  cards.forEach(c => allOpen ? c.classList.remove('open') : c.classList.add('open'));
+  document.querySelector('.expand-all-btn').textContent = allOpen ? '📖 全件まとめて開く' : '📕 全件まとめて閉じる';
+}
+
+renderCards();
+</script>
+</body>
+</html>
